@@ -1,6 +1,13 @@
 # find if the given number is a palindrome or not?
-n = input("enter a string")
-if(n == n[::-1]):
-  print("the given string is plaindrome")
-else:
-  print("the given string is not palindrome")
+def is_palindrome(s):
+    s = s.replace(" ", "").lower()  # remove spaces and convert to lowercase
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+n = input("Enter a string:")
+print(is_palindrome(n))  
